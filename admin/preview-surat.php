@@ -65,6 +65,7 @@
         $('#print').on('click', function() {
             printDiv();
             saveSurat();
+            $_POST['jumlahCetak'] = $_POST['jumlahCetak'] + 1;
             handleJumlahCetak();
             window.location.href = '/surat/admin/lihat-surat-masuk.php';
         });
@@ -90,11 +91,7 @@
                     nikIbu
                 },
             });
-        }
-
-        function handleJumlahCetak() {
-                $_POST['jumlahCetak'] + 1
-            }    
+        }  
 
 		function printDiv(){
 			var printContents = document.getElementById('surat-cetak').innerHTML;
