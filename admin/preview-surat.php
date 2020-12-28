@@ -34,7 +34,7 @@
         }
     </style>
     <div class="print-header">
-        <button class="btn btn-primary" id="print" onClick="handleJumlahCetak()">Cetak</button>
+        <button class="btn btn-primary" id="print">Cetak</button>
     </div>
     <section class="surat">
         <div id="surat-cetak">
