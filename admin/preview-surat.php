@@ -15,7 +15,7 @@
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
     $perihal=$_POST['perihal'];
-    
+    $jumlahCetak = 440;
 ?>
 </body>
     <style>
@@ -42,7 +42,7 @@
                 if ($perihal === 'Rekomendasi BPJS') {
                     include 'template-surat/surat-rekomendasi-bpjs.php';
                 }elseif($perihal == "Rekomendasi Jamkesos"){
-                    $_POST['jumlahCetak'] = 440;
+                    $_POST['jumlahCetak'] = $jumlahCetak;
                     include 'template-surat/surat-rekomendasi-jamkesos.php'; 
                 }else if($perihal == "Surat Nikah"){
                     include 'template-surat/surat-nikah.php';
@@ -65,7 +65,7 @@
         $('#print').on('click', function() {
             printDiv();
             saveSurat();
-            $_POST['jumlahCetak'] = $_POST['jumlahCetak'] + 1;
+            $_POST['jumlahCetak'] = $jumlahCetak + 1;
             handleJumlahCetak();
             window.location.href = '/surat/admin/lihat-surat-masuk.php';
         });
