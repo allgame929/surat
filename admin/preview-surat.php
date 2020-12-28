@@ -65,6 +65,7 @@
         $('#print').on('click', function() {
             printDiv();
             saveSurat();
+            handleJumlahCetak();
             window.location.href = '/surat/admin/lihat-surat-masuk.php';
         });
 
