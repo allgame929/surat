@@ -34,7 +34,7 @@
         }
     </style>
     <div class="print-header">
-        <button class="btn btn-primary" id="print">Cetak</button>
+        <button class="btn btn-primary" id="print" onClick="handleJumlahCetak()">Cetak</button>
     </div>
     <section class="surat">
         <div id="surat-cetak">
@@ -42,6 +42,7 @@
                 if ($perihal === 'Rekomendasi BPJS') {
                     include 'template-surat/surat-rekomendasi-bpjs.php';
                 }elseif($perihal == "Rekomendasi Jamkesos"){
+                    $_POST['jumlahCetak'] = 440;
                     include 'template-surat/surat-rekomendasi-jamkesos.php'; 
                 }else if($perihal == "Surat Nikah"){
                     include 'template-surat/surat-nikah.php';
@@ -89,6 +90,10 @@
                 },
             });
         }
+
+        function handleJumlahCetak() {
+                $_POST['jumlahCetak'] + 1
+            }    
 
 		function printDiv(){
 			var printContents = document.getElementById('surat-cetak').innerHTML;

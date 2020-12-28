@@ -3,7 +3,9 @@
 //buat koneksi dengan MySQL
 mysql_connect("localhost", "root", "");
 mysql_select_db("surat");
-  
+
+// TODO config include
+
 //tampilkan tabel mahasiswa_ilkom
 $result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
 
@@ -11,8 +13,6 @@ $result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
 $row=mysql_fetch_row($result);
 //echo "$row[0] $row[1] $row[2] $row[3] $row[4]";
 echo "<br />";
-
-$jumlahCetak=440;
            
 ?>
 
@@ -101,7 +101,7 @@ $jumlahCetak=440;
 		<p>---------------------------------------------------------------------------------------------------------------------</p>
 	<div class="center">
 		<p><u><b>SURAT PERMOHONAN PESERTA JAMKESOS</b></u></p>
-		<p>Nomor	: <?= $jumlahCetak ?> / &nbsp;&nbsp;&nbsp;    / X / 2020
+		<p>Nomor	: <?= $_POST["jumlahCetak"] ?> / &nbsp;&nbsp;&nbsp;    / X / 2020
 	</div>	
 		<br>
 		<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan dibawah ini kepala Desa Kemadang Kecamatan Tanjungsari Kabupaten Gunungkidul,

@@ -3,6 +3,8 @@
 //buat koneksi dengan MySQL
 mysql_connect("localhost", "root", "");
 mysql_select_db("surat");
+
+// TODO : ganti jadi config include
   
 //tampilkan tabel mahasiswa_ilkom
 $result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
