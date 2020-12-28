@@ -5,10 +5,13 @@ mysql_connect("localhost", "root", "");
 mysql_select_db("surat");
   
 //tampilkan tabel mahasiswa_ilkom
-$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
+//$resultSuami=mysql_query("SELECT * FROM datapenduduk where NIK=$nikSuamiterdaftar");
+//$resultIstri=mysql_query("SELECT * FROM datapenduduk where NIK=$nikIstriterdaftar");
 
  
-$row=mysql_fetch_row($result);
+//$rowSuami=mysql_fetch_row($resultSuami);
+//$rowIstri=mysql_fetch_row($resultIstri);
+
 //echo "$row[0] $row[1] $row[2] $row[3] $row[4]";
 echo "<br />";
 
@@ -102,73 +105,73 @@ echo "<br />";
 <div class="left">
 	<p>Yang bertanda tangan dibawah ini :
 	<p>A. Calon Suami
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias &nbsp;		:
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias &nbsp;		: <?= $_POST["namaSuami"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;2. Bin 	&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :							
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["binSuami"]; ?>						
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;3. NIK	&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
-											&nbsp;&nbsp;&nbsp;&nbsp; :
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;4. Tempat dan tanggal lahir		:
+											&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["nikSuamitakterdaftar"]; ?>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;4. Tempat dan tanggal lahir		: <?= $_POST["ttlSuami"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;5. Warganegaraan	&nbsp;&nbsp;&nbsp;
 													&nbsp;&nbsp;&nbsp;
-													&nbsp;&nbsp;&nbsp;&nbsp; :
+													&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["wrgSuamitakterdaftar"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;6. Agama	&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["agamaSuamitakterdaftar"]; ?>
 											
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;7. Pekerjaan	&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["pekerjaanSuami"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;8. Tempat tinggal&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
-												&nbsp;&nbsp;&nbsp; :
+												&nbsp;&nbsp;&nbsp; : <?= $_POST["alamatSuami"]; ?>
 												
 <br>
 	<p> B. Calon Istri
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias &nbsp;		:
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias &nbsp;		: <?= $_POST["namaIstri"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;2. Bin 	&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :							
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["binIstri"]; ?>					
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;3. NIK	&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
-											&nbsp;&nbsp;&nbsp;&nbsp; :
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;4. Tempat dan tanggal lahir		:
+											&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["nikIstritakterdaftar"]; ?>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;4. Tempat dan tanggal lahir		: <?= $_POST["ttlIstri"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;5. Warganegaraan	&nbsp;&nbsp;&nbsp;
 													&nbsp;&nbsp;&nbsp;
-													&nbsp;&nbsp;&nbsp;&nbsp; :
+													&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["wrgIstritakterdaftar"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;6. Agama	&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
 											&nbsp;&nbsp;&nbsp;&nbsp;
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["agamaIstritakterdaftar"]; ?>
 											
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;7. Pekerjaan	&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?= $_POST["pekerjaanIstri"]; ?>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;8. Tempat tinggal&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
 												&nbsp;&nbsp;&nbsp;
-												&nbsp;&nbsp;&nbsp; :
+												&nbsp;&nbsp;&nbsp; : <?= $_POST["alamatIstri"]; ?>
 <br>		
 	<p>Menyatakan dengan sesungguhnya bahwa atas dasar sukarela dan kesadaran sendiri tanpa ada
 		paksaan dari siapapun juga, setuju untuk melangsungkan pernikahan.
@@ -200,7 +203,7 @@ echo "<br />";
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;		Calon Istri
 <br><br><br><br>
-	<p><?= $row[3] ?>
+	<p><?= $_POST["namaSuami"]; ?>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
@@ -219,7 +222,7 @@ echo "<br />";
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;		<?= $row[3] ?>
+	&nbsp;&nbsp;&nbsp;&nbsp;		<?= $_POST["namaIstri"]; ?>
 	
 </div>
 </div>

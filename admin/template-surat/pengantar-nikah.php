@@ -5,10 +5,13 @@ mysql_connect("localhost", "root", "");
 mysql_select_db("surat");
   
 //tampilkan tabel mahasiswa_ilkom
-$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
-
+$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nikPemohon");
+$resultAyah=mysql_query("SELECT * FROM datapenduduk where NIK=$nikAyah");
+$resultIbu=mysql_query("SELECT * FROM datapenduduk where NIK=$nikIbu");
  
 $row=mysql_fetch_row($result);
+$rowAyah=mysql_fetch_row($resultAyah);
+$rowIbu=mysql_fetch_row($resultIbu);
 //echo "$row[0] $row[1] $row[2] $row[3] $row[4]";
 echo "<br />";
 
@@ -122,26 +125,26 @@ echo "<br />";
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Perempuan : Perawan, Janda 	:
 <br>
 	<p>Adalah benar anak dari pernikahan seorang pria
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias		: 
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias		: <?= $rowAyah[3] ?> </p>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;2. NIK							: <?= $nikAyah ?></p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;3. Tempat dan tanggal lahir		:
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;3. Tempat dan tanggal lahir		: <?= $rowAyah[11] ?>, <?= $rowAyah[10] ?> </p>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;4. Kewarganegaraan				:
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;5. Agama							:
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;6. Pekerjaan						:
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;7. Alamat						:
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;6. Pekerjaan						: <?= $rowAyah[9] ?></p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;7. Alamat						: <?= $rowAyah[4] ?></p>
 <br>
 	<p> Dengan seorang wanita
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias		:
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;2. NIK							:<?= $nikIbu ?></p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;3. Tempat dan tanggal lahir		:
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;1. Nama lengkap dan alias		: <?= $rowIbu[3] ?>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;2. NIK							: <?= $nikIbu ?></p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;3. Tempat dan tanggal lahir		: <?= $rowIbu[11] ?>, <?= $rowIbu[10] ?> </p>
 		<p>&nbsp;&nbsp;&nbsp;&nbsp;4. Kewarganegaraan				:
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;5. Agama							:
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;6. Pekerjaan						:
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;7. Alamat						:
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;5. Agama							: 
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;6. Pekerjaan						: <?= $rowIbu[9] ?>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;7. Alamat						: <?= $rowIbu[4] ?>
 <br>
 	<p>Demikian surat pengantar ini dibuat dengan mengingat sumpah jabaran dan untuk dipergunakan sebagaimana mestinya.
 	
-<br><br>
+<br>
 	<div class="right">
 		<p>
 			Kemadang, <?= $tanggal ?>

@@ -15,10 +15,9 @@
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
     $perihal=$_POST['perihal'];
-    $nikPemohon=$_POST['nikPemohon'];
-    $nikAyah=$_POST['nikAyah'];
-    $nikIbu=$_POST['nikIbu'];
+    
 ?>
+</body>
     <style>
         .print-header {
             position: fixed;
@@ -43,10 +42,13 @@
                 if ($perihal === 'Rekomendasi BPJS') {
                     include 'template-surat/surat-rekomendasi-bpjs.php';
                 }elseif($perihal == "Rekomendasi Jamkesos"){
-                    include 'template-surat/surat-rekomendasi-bpjs.php'; 
+                    include 'template-surat/surat-rekomendasi-jamkesos.php'; 
                 }else if($perihal == "Surat Nikah"){
                     include 'template-surat/surat-nikah.php';
                 }else if($perihal == 'Pengantar Nikah'){
+                    $nikPemohon=$_POST['nikPemohon'];
+                    $nikAyah=$_POST['nikAyah'];
+                    $nikIbu=$_POST['nikIbu'];
                     include 'template-surat/pengantar-nikah.php';
                 }else if($perihal == 'Persetujuan Nikah'){
                     include 'template-surat/persetujuan-nikah.php';
@@ -55,6 +57,8 @@
                 }
             ?>
         </div>
+
+
     </section>
     <script>
         $('#print').on('click', function() {
@@ -78,7 +82,10 @@
                 data: {
                     nomor,
                     tanggal,
-                    perihal
+                    perihal,
+                    nikPemohon,
+                    nikAyah,
+                    nikIbu
                 },
             });
         }
