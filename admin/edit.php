@@ -99,14 +99,6 @@ while($d=mysql_fetch_array($det)){
 				<td><input type="date" class="form-control" name="tanggal" value="<?php echo $d['tanggal_terima'] ?>"></td>
 			</tr>
 			<tr>
-				<td>Asal Surat</td>
-				<td><input type="text" class="form-control" name="asal" value="<?php echo $d['asal_surat'] ?>"></td>
-			</tr>
-			<tr>
-				<td>Tujuan Surat</td>
-				<td><input type="text" class="form-control" name="tujuan" value="<?php echo $d['tujuan_surat'] ?>"></td>
-			</tr>
-			<tr>
 				<td>Perihal Surat</td>
 				<td><input type="text" class="form-control" name="perihal" value="<?php echo $d['perihal_surat'] ?>"></td>
 			</tr>

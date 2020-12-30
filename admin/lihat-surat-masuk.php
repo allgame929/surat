@@ -44,8 +44,8 @@
 											<th>No</th>
 											<th>ID</th>
 											<th>Nomor Surat</th>
-											<th>Asal Surat</th>
-											<th>Tujuan Surat</th>
+											<!-- <th>Asal Surat</th>
+											<th>Tujuan Surat</th> -->
 											<th>Tgl Diterima</th>
 											<th>Perihal</th>
 											<th>Opsi</th>
@@ -68,8 +68,8 @@
 							       			<td>
 							       				<a href="<?= "det-srt-msk.php?id_surat={$row['id_surat']}" ?>"><?= $row['no_surat'] ?></a>
 							       			</td>
-							       			<td><?= $row['asal_surat'] ?></td>
-							       			<td><?= $row['tujuan_surat'] ?></td>
+							       			<!-- <td><?= $row['asal_surat'] ?></td>
+							       			<td><?= $row['tujuan_surat'] ?></td> -->
 							       			<td><?= $row['tanggal_terima'] ?></td>
 							       			<td><?= $row['perihal_surat'] ?></td>
 							       			<td>

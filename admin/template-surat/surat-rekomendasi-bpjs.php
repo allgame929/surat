@@ -100,7 +100,7 @@ echo "<br />";
 		<p>Alamat : JL.Baron Km16 Wonosari Gunungkidul Kode Pos : 55881,Email : www.desakemadang@yahoo.co.id
 	</div>
 		<p>---------------------------------------------------------------------------------------------------------------------</p>
-		<p>Nomor	: 440/ &nbsp;&nbsp;&nbsp;    / VIII / 2020
+		<p>Nomor	: <?= $nomor_surat ?>/ &nbsp;&nbsp;&nbsp;    / VIII / 2020
 		<p>Hal		: <?= $perihal ?></P>
 		<br>
 		<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan dibawah ini kepala Desa Kemadang Kecamatan Tanjungsari Kabupaten Gunungkidul,

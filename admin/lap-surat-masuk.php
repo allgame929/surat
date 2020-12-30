@@ -85,10 +85,11 @@
        					echo "<tr> ";
        					echo "<td>$no</td>";
 						echo "<td>$row[no_surat]</td>";
-						echo "<td>$row[asal_surat]</td>";
-						echo "<td>$row[tujuan_surat]</td>";
 						echo "<td>$row[tanggal_terima]</td>";
 						echo "<td>$row[perihal_surat]</td>";
+						// echo "<td>$row[asal_surat]</td>";
+						// echo "<td>$row[tujuan_surat]</td>";
+					
 						// echo "<td><a href='edit.php?id_surat=$row[id_surat]'><button type=\"button\" class=\"btn btn-warning btn-xs\"><i class=\"fa fa-edit\"></i> Edit</button></a>";
 						// echo "<a href='delete.php?id_surat=$row[id_surat]'><button type=\"button\" class=\"btn btn-danger btn-xs\"><i class=\"fa fa-trash-o\"></i> Hapus</button></a></td></tr>";
 
