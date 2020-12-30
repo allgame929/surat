@@ -71,7 +71,7 @@
         });
 
         $("#coba").on('click', function() {
-            coba++w;
+            coba++;
             $("#no-surat").html(coba);            
         })
 
