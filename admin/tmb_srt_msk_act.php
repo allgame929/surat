@@ -11,9 +11,9 @@ $asal='';
 $tujuan='';
 $perihal=$_POST['perihal'];
 
-mysql_query("insert into surat_masuk values('','$asal','$nomor','$perihal','$tanggal','$tujuan')");
-mysql_query("insert into surat_masuk values('','$asal','$nikPemohon','$perihal','$tanggal','$tujuan')");
+// mysql_query("INSERT INTO surat_masuk (asal_surat, no_surat, perihal_surat, tanggal_terima, tujuan_surat) VALUES ('$asal','$nomor','$perihal','$tanggal','$tujuan')");
+mysql_query("insert into surat_masuk values(DEFAULT,'$asal','$nomor','$perihal','$tanggal','$tujuan')");
 
-// header("location:lihat-surat-masuk.php");
+header("location:lihat-surat-masuk.php");
 
  ?>

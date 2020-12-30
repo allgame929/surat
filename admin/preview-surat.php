@@ -14,8 +14,7 @@
 <?php
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
-    $perihal=$_POST['perihal'];
-    $jumlahCetak = 440;
+    $perihal=$_POST['perihal'];    
 ?>
 </body>
     <style>
@@ -35,13 +34,14 @@
     </style>
     <div class="print-header">
         <button class="btn btn-primary" id="print">Cetak</button>
+        <button class="btn btn-primary" id="coba">coba</button>
     </div>
     <section class="surat">
         <div id="surat-cetak">
             <?php
                 if ($perihal === 'Rekomendasi BPJS') {
                     include 'template-surat/surat-rekomendasi-bpjs.php';
-                }elseif($perihal == "Rekomendasi Jamkesos"){
+                }else if($perihal == "Rekomendasi Jamkesos"){
                     include 'template-surat/surat-rekomendasi-jamkesos.php'; 
                 }else if($perihal == "Surat Nikah"){
                     include 'template-surat/surat-nikah.php';
@@ -61,12 +61,19 @@
 
     </section>
     <script>
+        var coba = 100;
+        $("#no-surat").html(coba);
+
         $('#print').on('click', function() {
             printDiv();
             saveSurat();
-            $jumlahCetak++;
-            window.location.href = '/surat/admin/lihat-surat-masuk.php';
+            window.location.href = '/admin/lihat-surat-masuk.php';
         });
+
+        $("#coba").on('click', function() {
+            coba++w;
+            $("#no-surat").html(coba);            
+        })
 
         function saveSurat() {
             var nomor = '<?= $nomor ?>';

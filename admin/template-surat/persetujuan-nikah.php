@@ -1,8 +1,10 @@
 
 <?php
 //buat koneksi dengan MySQL
-mysql_connect("localhost", "root", "");
-mysql_select_db("surat");
+include 'config.php';
+
+// mysql_connect("localhost", "root", "root");
+// mysql_select_db("surat");
   
 //tampilkan tabel mahasiswa_ilkom
 //$resultSuami=mysql_query("SELECT * FROM datapenduduk where NIK=$nikSuamiterdaftar");

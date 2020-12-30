@@ -1,8 +1,10 @@
 
 <?php
 //buat koneksi dengan MySQL
-mysql_connect("localhost", "root", "");
-mysql_select_db("surat");
+include 'config.php';
+
+// mysql_connect("localhost", "root", "");
+// mysql_select_db("surat");
 
 // TODO config include
 
@@ -88,6 +90,10 @@ echo "<br />";
     }
 </style>
 
+<?php $coba=50;
+
+?>
+
 <div class="book">
     <div class="page">
         <div class="subpage">
@@ -101,7 +107,7 @@ echo "<br />";
 		<p>---------------------------------------------------------------------------------------------------------------------</p>
 	<div class="center">
 		<p><u><b>SURAT PERMOHONAN PESERTA JAMKESOS</b></u></p>
-		<p>Nomor	: <?= $jumlahCetak ?> / &nbsp;&nbsp;&nbsp;    / X / 2020
+		<p>Nomor	: <span id="no-surat"></span> / &nbsp;&nbsp;&nbsp;    / X / 2020
 	</div>	
 		<br>
 		<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan dibawah ini kepala Desa Kemadang Kecamatan Tanjungsari Kabupaten Gunungkidul,
