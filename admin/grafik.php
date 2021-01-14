@@ -261,7 +261,7 @@ $jlh24 = mysql_num_rows($surat24);
 		
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Puskesmas Harapan Raya</a>. All Rights Reserved.</p>
+				<p class="copyright">&copy; 2020 <a href="https://www.themeineed.com" target="_blank">Rekayasa Sistem Komputer</a>. All Rights Reserved.</p>
 			</div>
 		</footer>
 	</div>

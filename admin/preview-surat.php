@@ -16,10 +16,33 @@
     $tanggal=$_POST['tanggal'];
     $perihal=$_POST['perihal'];
     
-    $result=mysql_query('select count(*) AS total from surat_masuk');
-    
-    $data=mysql_fetch_assoc($result);
-    $nomor_surat=$data['total']++;
+    //$result=mysql_query('select count(*) AS total from surat_masuk');
+    $resultBpjs=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Rekomendasi BPJS"');
+    $dataBpjs=mysql_fetch_assoc($resultBpjs);
+    $nomor_surat_bpjs=$dataBpjs['total']++;
+
+    $resultJamkesos=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Rekomendasi Jamkesos"');
+    $dataJamkesos=mysql_fetch_assoc($resultJamkesos);
+    $nomor_surat_jamkesos=$dataJamkesos['total']++;
+
+    $resultSuratnikah=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Surat Nikah"');
+    $dataSuratnikah=mysql_fetch_assoc($resultSuratnikah);
+    $nomor_surat_surat_nikah=$dataSuratnikah['total']++;
+
+    $resultPengantarnikah=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Pengantar Nikah"');
+    $dataPengantarnikah=mysql_fetch_assoc($resultPengantarnikah);
+    $nomor_surat_pengantar_nikah=$dataPengantarnikah['total']++;
+
+    $resultPersetujuannikah=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Persetujuan Nikah"');
+    $dataPersetujuannikah=mysql_fetch_assoc($resultPersetujuannikah);
+    $nomor_surat_persetujuan_nikah=$dataPersetujuannikah['total']++;
+
+    $kop_surat_bpjs = $nomor_surat_bpjs . "/VII/2020";
+    $kop_surat_jamkesos = $nomor_surat_jamkesos . "/VII/2020";
+    $kop_surat_nikah = $nomor_surat_nikah . "/VII/2020";
+    $kop_surat_pengantar_nikah = $nomor_surat_pengantar_nikah . "/VII/2020";
+    $kop_surat_persetujuan_nikah = $nomor_surat_persetujuan_nikah . "/VII/2020";
+
 
 ?>
 </body>
@@ -82,7 +105,11 @@
         // })
 
         function saveSurat() {
-            var nomor = '<?= $nomor ?>';
+            var nomor_surat_bpjs = '<?= $kop_surat_bpjs ?>';
+            var nomor_surat_jamkesos = '<?= $kop_surat_jamkesos ?>';
+            var nomor_surat_nikah = '<?= $kop_surat_nikah ?>';
+            var nomor_pengantar_nikah = '<?= $kop_surat_pengantar_nikah ?>';
+            var nomor_persetujuan_nikah = '<?= $kop_surat_persetujuan_nikah ?>';
             var tanggal = '<?= $tanggal ?>';
             var perihal = '<?= $perihal ?>';
             
@@ -90,7 +117,11 @@
                 type: "POST",
                 url: 'tmb_srt_msk_act.php',
                 data: {
-                    nomor,
+                    nomor_surat_bpjs,
+                    nomor_surat_jamkesos,
+                    nomor_surat_nikah,
+                    nomor_pengantar_nikah,
+                    nomor_persetujuan_nikah,
                     tanggal,
                     perihal
                     // nikPemohon,

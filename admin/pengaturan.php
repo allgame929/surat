@@ -105,6 +105,34 @@
 	<div class="col-md-12">
 		<div class="panel">
 			<div class="panel-heading">
+				<h3 class="panel-title">Nama Pejabat Yang Menandatangan :</h3>
+			</div>
+				<div class="panel-body">	
+				<div class="col-md-5 col-md-offset-3">
+
+				
+					<form action="preview-surat.php.php" method="post"></form>	
+						<div class="form-group">
+							<label>Nama Pejabat :</label>
+							<input name="namaPejabat" type="text" class="form-control" placeholder="Nama Pejabat ..">
+						</div>
+					</form>
+				
+						<div class="form-group">
+							<label></label>
+							<input type="submit" class="btn btn-info" value="Simpan" method="post">
+							<input type="reset" class="btn btn-danger" value="reset">
+						</div>																	
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>		
+<!-- <div class="row">
+	<div class="col-md-12">
+		<div class="panel">
+			<div class="panel-heading">
 				<h3 class="panel-title">Ubah Foto</h3>
 			</div>
 			<div class="panel-body">
@@ -137,7 +165,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 
 

@@ -89,7 +89,7 @@ echo "<br />";
 <div class="left">
 	<p>LAMPIRAN VI
 	<P>KEPUTUSAN DIREKTUR JENDRAL BIMBINGAN MASYARAKAT ISLAM
-	<P>NOMOR 473 TAHUN 2020
+	<P>NOMOR <?= $nomor_surat_persetujuan_nikah ?> TAHUN 2020
 	<P>TENTANG PETUNJUK TEKNIS PELAKSANAAN PENCATATAN NIKAH
 	<br><br>
 </div>
@@ -205,7 +205,7 @@ echo "<br />";
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;		Calon Istri
 <br><br><br><br>
-	<p><?= $_POST["namaSuami"]; ?>
+	<p>..................
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
@@ -224,7 +224,7 @@ echo "<br />";
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;		<?= $_POST["namaIstri"]; ?>
+	&nbsp;&nbsp;&nbsp;&nbsp;		..................
 	
 </div>
 </div>
