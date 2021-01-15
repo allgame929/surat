@@ -110,20 +110,42 @@
 				<div class="panel-body">	
 				<div class="col-md-5 col-md-offset-3">
 
-				
-					<form action="preview-surat.php.php" method="post"></form>	
-						<div class="form-group">
-							<label>Nama Pejabat :</label>
-							<input name="namaPejabat" type="text" class="form-control" placeholder="Nama Pejabat ..">
+				<div class="modal-body">
+							<form action="" method="post">
+								<div class="form-group">
+									<label>Nama Pejabat :</label><br>
+									<select onchange="selectNama()" id="namaPejabat" name='namaPejabat'>
+										<option disabled selected>-- Pilih Nama Pejabat --</option>
+										<option value='kades'>H.SUTONO.Amd. Kep SIP</option>
+										<option value='sekretaris'>Sekretaris</option>
+									</select>
+								</div>
+
+								<div id=""></div>
+
+								<div class="modal-footer">
+									<input type="submit" class="btn btn-primary" value="Simpan">
+								</div>
+							</form>
 						</div>
-					</form>
-				
+				<!-- <form action="" method="post">
+				<div class="form-group">
+									<label>Nama Pejabat :</label><br>
+									<select onchange="selectNama()" id="namaPejabat" name='namaPejabat'>
+										<option disabled selected>-- Pilih Nama Pejabat --</option>
+										<option value='kades'>H.SUTONO.Amd. Kep SIP</option>
+										<option value='sekretaris'>Rekomendasi Jamkesos</option>
+									</select>
+								</div>
+						<div id=""></div>
+												
 						<div class="form-group">
 							<label></label>
 							<input type="submit" class="btn btn-info" value="Simpan" method="post">
-							<input type="reset" class="btn btn-danger" value="reset">
+							<input type="reset" class="btn btn-danger" value="Edit">
 						</div>																	
-					
+				</form>	 -->
+
 				</div>
 			</div>
 		</div>
