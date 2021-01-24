@@ -111,10 +111,10 @@
 				<div class="col-md-5 col-md-offset-3">
 
 				<div class="modal-body">
-							<form action="lihat-surat-masuk.php" method="post">
+							<form action="lihat-surat-masuk.php" method="POST">
 								<div class="form-group">
 									<label>Nama Pejabat :</label><br>
-									<select onchange="selectNama()" id="namaPejabat" name='namaPejabat'>
+									<select onchange=selectPejabat() id="namaPejabat" name='namaPejabat'>
 										<option disabled selected>-- Pilih Nama Pejabat --</option>
 										<option value='kades'>H.SUTONO.Amd. Kep SIP</option>
 										<option value='sekretaris'>Sekretaris</option>
@@ -122,10 +122,10 @@
 								</div>
 
 								<div id=""></div>
+									<div class="modal-footer">
+										<input type="submit" class="btn btn-primary" value="Simpan">
+									</div>
 
-								<div class="modal-footer">
-									<input type="submit" class="btn btn-primary" value="Simpan">
-								</div>
 							</form>
 						</div>
 				</div>
@@ -194,8 +194,6 @@
           </div>
         </div>
       </div>
-
-
 		
 		<?php
 			include '../sections/footer.php'; 

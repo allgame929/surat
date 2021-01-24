@@ -67,6 +67,7 @@
         }
     </style>
     <div class="print-header">
+    <?php var_dump($_SESSION);?>
         <button class="btn btn-primary" id="print">Cetak</button>
         <!-- <button class="btn btn-primary" id="coba">coba</button> -->
     </div>
