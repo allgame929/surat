@@ -15,6 +15,11 @@
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
     $perihal=$_POST['perihal'];
+    $namaPejabat=$_POST['namaPejabat'];
+
+    $resultnamaPejabat=mysql_query("$namaPejabat");
+    $datanamaPejabat=mysql_fetch_assoc($resultnamaPejabat);
+    
     
     //$result=mysql_query('select count(*) AS total from surat_masuk');
     $resultBpjs=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Rekomendasi BPJS"');

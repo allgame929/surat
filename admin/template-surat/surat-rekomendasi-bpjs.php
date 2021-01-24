@@ -9,10 +9,12 @@ include 'config.php';
   
 //tampilkan tabel mahasiswa_ilkom
 $result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
+$resultPejabat=mysql_query("SELECT * FROM pejabat where nama_pejabat=$namaPejabat");
 
- 
+$rowPejabat=mysql_fetch_row($resultPejabat);
+echo "<br />"; 
+
 $row=mysql_fetch_row($result);
-//echo "$row[0] $row[1] $row[2] $row[3] $row[4]";
 echo "<br />";
 
 ?>
@@ -176,7 +178,7 @@ echo "<br />";
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;		H.SUTONO.Amd. Kep SIP
+		&nbsp;&nbsp;		<?= $rowPejabat[2] ?></p>
 	</div>
 	
 	<p class="center">
