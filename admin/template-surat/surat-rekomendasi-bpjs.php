@@ -2,14 +2,10 @@
 <?php
 //buat koneksi dengan MySQL
 include 'config.php';
-// mysql_connect("localhost", "root", "root");
-// mysql_select_db("surat");
-
-// TODO : ganti jadi config include
   
-//tampilkan tabel mahasiswa_ilkom
+$namaPejabat=$_POST['namaPejabat'];
 $result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
-$resultPejabat=mysql_query("SELECT * FROM pejabat where nama_pejabat=$namaPejabat");
+$resultPejabat=mysql_query("SELECT * FROM pejabat where nama_pejabat='{$_POST['namaPejabat']}'");
 
 $rowPejabat=mysql_fetch_row($resultPejabat);
 echo "<br />"; 
@@ -17,6 +13,7 @@ echo "<br />";
 $row=mysql_fetch_row($result);
 echo "<br />";
 
+//var_dump($rowPejabat);
 ?>
 
 <style>
@@ -178,7 +175,7 @@ echo "<br />";
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;		<?= $rowPejabat[2] ?></p>
+		&nbsp;&nbsp;		<?= $namaPejabat ?></p>
 	</div>
 	
 	<p class="center">

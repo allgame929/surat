@@ -193,7 +193,7 @@ dan dicatat sesuai dengan ketentuan peraturan perundang-undangan.
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		<?= $namaPejabat ?>
+		......................
 		
 
 </div>

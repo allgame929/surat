@@ -15,11 +15,8 @@
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
     $perihal=$_POST['perihal'];
-    $namaPejabat=$_POST['namaPejabat'];
+    //$namaPejabat=$_POST['namaPejabat'];
 
-    $resultnamaPejabat=mysql_query("$namaPejabat");
-    $datanamaPejabat=mysql_fetch_assoc($resultnamaPejabat);
-    
     
     //$result=mysql_query('select count(*) AS total from surat_masuk');
     $resultBpjs=mysql_query('select count(*) AS total from surat_masuk where perihal_surat = "Rekomendasi BPJS"');
@@ -44,7 +41,7 @@
 
     $kop_surat_bpjs = $nomor_surat_bpjs . "/VII/2020";
     $kop_surat_jamkesos = $nomor_surat_jamkesos . "/VII/2020";
-    $kop_surat_nikah = $nomor_surat_nikah . "/VII/2020";
+    $kop_surat_nikah = $nomor_surat_surat_nikah . "/VII/2020";
     $kop_surat_pengantar_nikah = $nomor_surat_pengantar_nikah . "/VII/2020";
     $kop_surat_persetujuan_nikah = $nomor_surat_persetujuan_nikah . "/VII/2020";
 
@@ -67,7 +64,7 @@
         }
     </style>
     <div class="print-header">
-    <?php var_dump($_SESSION);?>
+    <!-- <?php var_dump($_SESSION);?> -->
         <button class="btn btn-primary" id="print">Cetak</button>
         <!-- <button class="btn btn-primary" id="coba">coba</button> -->
     </div>
@@ -118,6 +115,7 @@
             var nomor_persetujuan_nikah = '<?= $kop_surat_persetujuan_nikah ?>';
             var tanggal = '<?= $tanggal ?>';
             var perihal = '<?= $perihal ?>';
+            var namaPejabat = '<?= $namaPejabat ?>';
             
             $.ajax({
                 type: "POST",
@@ -129,7 +127,8 @@
                     nomor_pengantar_nikah,
                     nomor_persetujuan_nikah,
                     tanggal,
-                    perihal
+                    perihal,
+                    namaPejabat
                     // nikPemohon,
                     // nikAyah,
                     // nikIbu

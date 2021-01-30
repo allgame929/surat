@@ -1,3 +1,10 @@
+<?php
+
+include 'config.php';
+
+$result = mysql_query("SELECT * FROM pejabat");
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -105,31 +112,31 @@
 	<div class="col-md-12">
 		<div class="panel">
 			<div class="panel-heading">
-				<h3 class="panel-title">Nama Pejabat Yang Menandatangan :</h3>
+				<h3 class="panel-title">Ganti Nama Pejabat :</h3>
 			</div>
 				<div class="panel-body">	
-				<div class="col-md-5 col-md-offset-3">
+					<div class="col-md-5 col-md-offset-3">
+						<table border="2" cellpadding="" cellspacing="" >
+							
+							
+								<tr>
+									<th> No.</th>
+									<th> Action </th>
+									<th> Nama Pejabat </th>
+								</tr>
+							<?php $i = 1; ?>	
+							<?php while ($row = mysql_fetch_assoc($result) ): ?>
+								<tr>
+									<td> <?= $i; ?> </td>
+									<td> <a href ="edit-pejabat.php?id=<?= $row["id"]; ?>" onclick="return confirm ('yakin?'); "> EDIT </a> </td>
+									<td> <?= $row["nama_pejabat"]; ?> </td>
+								</tr>
+							<?php $i++; ?>
+							<?php endwhile; ?>	
 
-				<div class="modal-body">
-							<form action="lihat-surat-masuk.php" method="POST">
-								<div class="form-group">
-									<label>Nama Pejabat :</label><br>
-									<select onchange=selectPejabat() id="namaPejabat" name='namaPejabat'>
-										<option disabled selected>-- Pilih Nama Pejabat --</option>
-										<option value='kades'>H.SUTONO.Amd. Kep SIP</option>
-										<option value='sekretaris'>Sekretaris</option>
-									</select>
-								</div>
-
-								<div id=""></div>
-									<div class="modal-footer">
-										<input type="submit" class="btn btn-primary" value="Simpan">
-									</div>
-
-							</form>
-						</div>
+						</table>
+					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 </div>		
@@ -140,14 +147,7 @@
 				<h3 class="panel-title">Ubah Foto</h3>
 			</div>
 			<div class="panel-body">
-				<?php 
-				if(isset($_GET['pesan'])){
-					$pesan=mysql_real_escape_string($_GET['pesan']);
-					if($pesan=="oke"){
-						echo "<div class='alert alert-success'>Foto berhasil di ganti !! </div>";
-					}
-				}
-				?>
+				
 
 				<br/>
 				<div class="col-md-5 col-md-offset-3">

@@ -1,14 +1,14 @@
 
 <?php
-//buat koneksi dengan MySQL
+
 include 'config.php';
 
-// mysql_connect("localhost", "root", "");
-// mysql_select_db("surat");
+$namaPejabat=$_POST['namaPejabat'];
+$resultPejabat=mysql_query("SELECT * FROM pejabat where nama_pejabat='{$_POST['namaPejabat']}'");
+$rowPejabat=mysql_fetch_row($resultPejabat);
+echo "<br />"; 
 
-// TODO config include
 
-//tampilkan tabel mahasiswa_ilkom
 $result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
 
  
@@ -164,7 +164,7 @@ echo "<br />";
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</P><br><br><br>
 		<p>
-			H.SUTONO.Amd. Kep SIP
+			<?= $namaPejabat ?>
 		</P>
 	</div>    
     

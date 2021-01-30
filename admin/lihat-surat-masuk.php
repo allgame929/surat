@@ -155,11 +155,7 @@
 		          	</div>
 		        </div>
 		    </div>
-<?php
-     session_start();
-     if(isset($_POST['namaPejabat']))
-         $_SESSION['namaPejabat'] = $_POST['namaPejabat'];
-?>
+
 
 <?php
 //Form Surat
