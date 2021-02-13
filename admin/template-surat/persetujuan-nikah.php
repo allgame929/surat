@@ -7,8 +7,8 @@ include 'config.php';
 // mysql_select_db("surat");
   
 //tampilkan tabel mahasiswa_ilkom
-//$resultSuami=mysql_query("SELECT * FROM datapenduduk where NIK=$nikSuamiterdaftar");
-//$resultIstri=mysql_query("SELECT * FROM datapenduduk where NIK=$nikIstriterdaftar");
+//$resultSuami=mysql_query("SELECT * FROM warga where NIK=$nikSuamiterdaftar");
+//$resultIstri=mysql_query("SELECT * FROM warga where NIK=$nikIstriterdaftar");
 
  
 //$rowSuami=mysql_fetch_row($resultSuami);
@@ -205,7 +205,7 @@ echo "<br />";
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;		Calon Istri
 <br><br><br><br>
-	<p>..................
+	<p><?= $_POST["namaSuami"]; ?>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
@@ -224,7 +224,9 @@ echo "<br />";
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;		..................
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;		<?= $_POST["namaIstri"]; ?>
 	
 </div>
 </div>

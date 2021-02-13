@@ -8,9 +8,9 @@ $resultPejabat=mysql_query("SELECT * FROM pejabat where nama_pejabat='{$_POST['n
 $rowPejabat=mysql_fetch_row($resultPejabat);
 echo "<br />"; 
 
-$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nikPemohon");
-$resultAyah=mysql_query("SELECT * FROM datapenduduk where NIK=$nikAyah");
-$resultIbu=mysql_query("SELECT * FROM datapenduduk where NIK=$nikIbu");
+$result=mysql_query("SELECT * FROM warga where NIK=$nikPemohon");
+$resultAyah=mysql_query("SELECT * FROM warga where NIK=$nikAyah");
+$resultIbu=mysql_query("SELECT * FROM warga where NIK=$nikIbu");
  
 $row=mysql_fetch_row($result);
 $rowAyah=mysql_fetch_row($resultAyah);

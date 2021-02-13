@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 <?php
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
@@ -47,6 +48,7 @@
 
 
 ?>
+
 </body>
     <style>
         .print-header {

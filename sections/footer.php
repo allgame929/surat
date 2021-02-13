@@ -49,7 +49,7 @@
 		    if ( perihalValue === 'Rekomendasi BPJS' ) {
 		    	$formSuratMasuk.loadTemplate($("#form-bpjs"));
 		    } else if ( perihalValue === 'Rekomendasi Jamkesos' ) {
-		    	$formSuratMasuk.loadTemplate($("#form-bpjs"));
+		    	$formSuratMasuk.loadTemplate($("#form-jamkesos"));
 		    } else if ( perihalValue === 'Surat Nikah' ) {
 		    	$formSuratMasuk.loadTemplate($("#form-calon"));
 		    }else if ( perihalValue === 'Pengantar Nikah' ) {

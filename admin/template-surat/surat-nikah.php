@@ -6,7 +6,7 @@ include 'config.php';
 // mysql_select_db("surat");
   
 //tampilkan tabel mahasiswa_ilkom
-$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
+$result=mysql_query("SELECT * FROM warga where NIK=$nomor");
 
  
 //$row=mysql_fetch_row($result);

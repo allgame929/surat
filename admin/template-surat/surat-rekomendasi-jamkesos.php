@@ -9,7 +9,7 @@ $rowPejabat=mysql_fetch_row($resultPejabat);
 echo "<br />"; 
 
 
-$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
+$result=mysql_query("SELECT * FROM warga where NIK=$nomor");
 
  
 $row=mysql_fetch_row($result);
@@ -121,8 +121,8 @@ echo "<br />";
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; 	: <?= $row[3] ?></p>
 		<p> Jenis Kelamin
-		&nbsp;&nbsp;&nbsp;&nbsp;	: </p>
-		<p>Tempat Tgl Lahir	: <?= $row[11] ?>, <?= $row[10] ?></p>
+		&nbsp;&nbsp;&nbsp;&nbsp;	: <?= $_POST["jenisKelamin"]; ?></p>
+		<p>Tempat Tgl Lahir	: <?= $row[12] ?>, <?= $row[11] ?></p>
 		<p>NIK
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
@@ -131,19 +131,19 @@ echo "<br />";
 		<p>Pekerjaan
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		&nbsp;					: <?= $row[9] ?></p>
+		&nbsp;					: <?= $row[10] ?></p>
 		<p>Agama
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		&nbsp;					: </p>
+		&nbsp;					: <?= $_POST["agama"]; ?></p>
 		<p>Warga Negara
-		&nbsp;&nbsp;			: </p>
+		&nbsp;&nbsp;			: <?= $_POST["wargaNegara"]; ?></p>
 		<p>Alamat
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		&nbsp;		 		: <?= $row[4] ?></p>
+		&nbsp;		 		: <?= $row[5] ?></p>
 		
 	</div><br>
 	

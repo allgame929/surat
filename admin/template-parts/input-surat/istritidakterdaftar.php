@@ -1,7 +1,7 @@
 
 <script type="text/html" id="form-istri-tak-terdaftar">
 <form action="persetujuan-nikah.php" method="post"></form>
-<form action="surat-nikah.php" method="post"></form>
+
 	<div class="form-group">
 		<label>Nama  :</label>
 		<input name="namaIstri" type="text" class="form-control" placeholder="Nama ..">

@@ -2,8 +2,10 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Siasy Login</title>
+
+	<title>SISTEM ADMINISTRASI PELAYANAN MASYARAKAT LOGIN</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -22,9 +24,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-	<?php include 'config.php'; ?>
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/gkk.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/gkk.png">
+	
 	<style type="text/css">
 	.kotak{	
 		margin-top: 150px;
@@ -46,8 +48,11 @@
 		?>
 		<div class="panel panel-default">
 			<form action="login_admin_act.php" method="post">
+
 				<div class="col-md-4 col-md-offset-4 kotak">
-					<h3>Selamat Datang</h3>
+					
+						<h3>Selamat Datang</h3>
+						<h3>di SISTEM ADMINISTRASI PELAYANAN MASYARAKAT</h3>
 					<div class="input-group">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
 						<input type="text" class="form-control" placeholder="Username" name="uname">

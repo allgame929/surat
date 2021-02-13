@@ -4,7 +4,7 @@
 include 'config.php';
   
 $namaPejabat=$_POST['namaPejabat'];
-$result=mysql_query("SELECT * FROM datapenduduk where NIK=$nomor");
+$result=mysql_query("SELECT * FROM warga where NIK=$nomor");
 $resultPejabat=mysql_query("SELECT * FROM pejabat where nama_pejabat='{$_POST['namaPejabat']}'");
 
 $rowPejabat=mysql_fetch_row($resultPejabat);
@@ -110,12 +110,12 @@ echo "<br />";
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp; 	: <?= $row[3] ?></p>
-		<p>Tempat Tgl Lahir	: <?= $row[11] ?>, <?= $row[10] ?></p>
+		<p>Tempat Tgl Lahir	: <?= $row[12] ?>, <?= $row[11] ?></p>
 		<p>Alamat
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
-		&nbsp;		 		: <?= $row[4] ?></p>
+		&nbsp;		 		: <?= $row[5] ?></p>
 		<p>NIK
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;
