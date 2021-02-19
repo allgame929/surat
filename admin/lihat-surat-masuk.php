@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<?php
 	session_start();
 	include 'cek.php';
 	include 'config.php';
 	include '../sections/header.php';
+	$talmpilPerihal=$_POST['tampilPerihal'];
 	?>
 
 	<title>SISTEM ADMINISTRASI PELAYANAN MASYARAKAT</title>
@@ -17,45 +19,7 @@
 			require '../sections/navbar.php';
 			require './template-parts/sidebar.php';
 		?>
-  <div id="sidebar-nav" class="sidebar">
-             <div class="sidebar-scroll">
-                <nav>
-                    
-        <ul class="nav">
-                    <li><a href="index.php" class=""><i class="lnr lnr-home"></i> <span>Beranda</span></a></li>
-
-                    <li><a href="lihat-surat-masuk.php" class=""><i class="fa fa-envelope"></i> <span>Pembuatan Surat</span></a></li>
-                    <li><a href="penduduk.php" class=""><i class="fa fa-user fa-group fa-fw"></i> <span>Data Penduduk</span></a></li>
-
-                <li>
-                        <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-exchange fa-fw"></i> <span>Data Mutasi</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages4" class="collapse ">
-                            <ul class="nav">
-                                                    <li><a href="mutasi_datang.php" class=""><i class="fa fa-long-arrow-right fa-fw"></i> <span>Pindah Datang</span></a></li>
-                                                    <li><a href="mutasi_keluar.php" class=""><i class="fa fa-long-arrow-left fa-fw"></i> <span>Pindah Keluar</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-                <li>
-                        <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-newspaper-o fa-fw"></i> <span>Data Peristiwa</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages5" class="collapse ">
-                            <ul class="nav">
-                                                    <li><a href="kelahiran.php" class=""><i class="fa fa-venus-mars fa-fw"></i> <span>Kelahiran</span></a></li>
-                                                    <li><a href="kematian.php" class=""><i class="fa fa-ambulance fa-fw"></i> <span>Kematian</span></a></li>
-                            </ul>
-                        </div>
-                    </li>
-
-                
-
-
-
-                            <li><a href="pengaturan.php" class=""><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li>
-
-                            <li><a href="javascript:;" class="" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-sign-out"></i> <span>Keluar</span></li></a>
-    </ul>               </nav>
-            </div>
-        </div>
+  
 		
 
 		<!-- MAIN -->
@@ -73,7 +37,25 @@
 
 							<div class="clearfix"></div>
 
-
+							<form action="" method="post">	
+								<div class="form-group">
+									<label>Masukan Perihal :</label><br>
+									<select  id="tampilPerihal" name='tampilPerihal'>
+										<option disabled selected>-- Pilih Perihal --</option>
+										<option value='Rekomendasi BPJS'>Rekomendasi BPJS</option>
+										<option value='Rekomendasi Jamkesos'>Rekomendasi Jamkesos</option>
+										<option value='Surat Nikah'>Surat Nikah</option>
+										<option value='Pengantar Nikah'>Pengantar Nikah</option>
+										<option value='Persetujuan Nikah'>Persetujuan Nikah</option>
+									</select>
+								</div>
+								<button type="submit" > Go! </button>
+							</form>
+							<script>
+								$("#tampilPerihal").on("change", function () {
+									console.log($(this).val());
+								});
+							</script>
 							<div class="x_content">
 								<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
@@ -86,12 +68,20 @@
 											<th>Tujuan Surat</th> -->
 											<th>Tgl Diterima</th>
 											<th>Perihal</th>
+												<?php 
+											 		if ($_SESSION['level'] === 'admin') {
+
+													 
+											   ?>
 											<th>Opsi</th>
+												<?php } ?>		
 										</tr>
 									</thead>
 									<tbody>
 										<?php
-							        		$sql = "SELECT * FROM surat_masuk";
+											
+											$perihal = isset($_POST['tampilPerihal']) ? $_POST['tampilPerihal'] : '';
+							        		$sql = "SELECT * FROM surat_masuk WHERE perihal_surat='$perihal'";
 							       			$result = mysql_query($sql);
 							       			$no = 1;
 
@@ -106,10 +96,14 @@
 							       			<td>
 							       				<a href="<?= "det-srt-msk.php?id_surat={$row['id_surat']}" ?>"><?= $row['no_surat'] ?></a>
 							       			</td>
-							       			<!-- <td><?= $row['asal_surat'] ?></td>
-							       			<td><?= $row['tujuan_surat'] ?></td> -->
+							       		
 							       			<td><?= $row['tanggal_terima'] ?></td>
 							       			<td><?= $row['perihal_surat'] ?></td>
+											   <?php 
+											 		if ($_SESSION['level'] === 'admin') {
+
+													 
+											   ?>
 							       			<td>
 							       				<a href="<?= "edit.php?id_surat={$row['id_surat']}" ?>">
 							       					<button type="button" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit</button>
@@ -122,6 +116,7 @@
 							       					</button>
 							       				</a>
 							       			</td>
+											   <?php } ?>
 							       		</tr>
 
 							       		<?php

@@ -2,18 +2,20 @@
 <?php
 //buat koneksi dengan MySQL
 include 'config.php';
-// mysql_connect("localhost", "root", "root");
-// mysql_select_db("surat");
-  
-//tampilkan tabel mahasiswa_ilkom
+include 'fungsiromawi.php';
+
 $result=mysql_query("SELECT * FROM warga where NIK=$nomor");
 
  
-//$row=mysql_fetch_row($result);
-//echo "$row[0] $row[1] $row[2] $row[3] $row[4]";
+
 echo "<br />";
 
+$bulan = date('n');
+$tahun = date('Y');
+$romawi    = getRomawi($bulan);
+$nomorSurat = "440/$nomor_surat_jamkesos/".$romawi."/".$tahun;
 ?>
+
 <style>
 .center {
   text-align: center;

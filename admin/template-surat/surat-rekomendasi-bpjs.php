@@ -2,6 +2,7 @@
 <?php
 //buat koneksi dengan MySQL
 include 'config.php';
+
   
 $namaPejabat=$_POST['namaPejabat'];
 $result=mysql_query("SELECT * FROM warga where NIK=$nomor");
@@ -13,181 +14,82 @@ echo "<br />";
 $row=mysql_fetch_row($result);
 echo "<br />";
 
+$bulan = date('n');
+$tahun = date('Y');
+$romawi    = getRomawi($bulan);
+$nomorSurat = "440/$nomor_surat_bpjs/".$romawi."/".$tahun;
 //var_dump($rowPejabat);
 ?>
 
-<style>
-.center {
-  text-align: center;
-  
-}
-.left {
-  text-align: left;
-  
-}
-.right {
-  text-align: right;
-  
-}
+		<html>
+            <head>
+                <title>Rekomendasi BPJS</title>
+            </head>
 
-.tengah {
-	
-	text-indent: 80px;
-	
-}
+        <body>
+            <table align="center" border="0" cellpadding="1" style="width: 700px;"><tbody>
+                <tr>     <td colspan="3"><div align="center">
+                <img src="/surat/kopsurat.jpg" style="float:left" height="180" width="750">
+                    <!-- <span style="font-family: Verdana; font-size: large;">	
+                        <b> KABUPATEN GUNUNGKIDUL</b><BR>
+                        <b> KAPANEWON TANJUNGSARI</b><BR>
+                        <b>PEMERINTAH KALURAHAN KEMADANG</b>
+                        <p>Alamat : JL.Baron Km16 Wonosari Gunungkidul Kode Pos : 55881,<br>Email : www.desakemadang@yahoo.co.id</p>
+                    </span> -->
+        <hr />
+        </div>
+				<tr>     <td colspan="2"><table border="0" cellpadding="1" style="width: 400px;"><tbody>
+					<tr>         <td width="93"><br><br><span style="font-size: medium;">Nomor Surat</span></td>     <td width="8"><br><br><span style="font-size: medium;">:</span></td>        	<td width="200"><br><br><span style="font-size: medium;"><?= $nomorSurat ?></span></td>       </tr>
+					<tr>         <td><span style="font-size: medium;">Hal</span></td>        				 <td><span style="font-size: medium;">:</span></td>         			<td><span style="font-size: medium;">Rekomendasi BPJS</span></td>       </tr>
+					
+				</tbody></table>
+				</tr>
 
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: #FAFAFA;
-        font: 12pt "Tahoma";
-    }
-    * {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-    }
-    .page {
-        width: 210mm;
-        min-height: 297mm;
-        padding: 20mm;
-        margin: 10mm auto;
-        border: 1px #D3D3D3 solid;
-        border-radius: 5px;
-        background: white;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-    .subpage {
-        padding: 1cm;
-        border: 5px red solid;
-        height: 257mm;
-        outline: 2cm #FFEAEA solid;
-		font-size: 13px;
-    }
-    
-    @page {
-        size: A4;
-        margin: 0;
-    }
-    @media print {
-        html, body {
-            width: 210mm;
-            height: 297mm;        
-        }
-        .page {
-            margin: 0;
-            border: initial;
-            border-radius: initial;
-            width: initial;
-            min-height: initial;
-            box-shadow: initial;
-            background: initial;
-            page-break-after: always;
-        }
-    }
-</style>
+					
 
-<div class="book">
-    <div class="page">
-        <div class="subpage">
-    <img src="/surat/logogk.png" style="float:left" height="150" width="100">	
-	<div class="center">
-		<h3> PEMERINTAH KABUPATEN GUNUNGKIDUL</h3>
-		<h2>KECAMATAN TANJUNGSARI</h2>
-		<h2>DESA KEMADANG</h2>
-		<p>Alamat : JL.Baron Km16 Wonosari Gunungkidul Kode Pos : 55881,Email : www.desakemadang@yahoo.co.id
-	</div>
-		<p>---------------------------------------------------------------------------------------------------------------------</p>
-		<p>Nomor	: <?= $nomor_surat_bpjs ?>/ &nbsp;&nbsp;&nbsp;    / VIII / 2020
-		<p>Hal		: <?= $perihal ?></P>
-		<br>
-		<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan dibawah ini kepala Desa Kemadang Kecamatan Tanjungsari Kabupaten Gunungkidul,
-			menerangkan dengan sesungguhnya bahwa :</p><br>
-	<div class="tengah">
-		<p> Nama
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; 	: <?= $row[3] ?></p>
-		<p>Tempat Tgl Lahir	: <?= $row[12] ?>, <?= $row[11] ?></p>
-		<p>Alamat
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;		 		: <?= $row[5] ?></p>
-		<p>NIK
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp; : <?= $nomor ?></p>
-	</div><br>
-	
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas adalah Penduduk Desa Kemadang, Kecamatan Tanjungsari Kabupaten Gunungkidul
+        
+                
+                <tr>     <td colspan="3" height="300" valign="top"><div align="justify">
+                    <br><br><span style="font-size: medium; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yang bertanda tangan dibawah ini kepala Desa Kemadang Kecamatan Tanjungsari Kabupaten Gunungkidul, menerangkan dengan sesungguhnya bahwa :</span>
+                    
+                        <table align="center" border="0" style="width: 420px;"><tbody>
+                            
+                            <tr>           <td width="120"><span style="font-size: medium;">Nama</span></td>           <td width="10"><span style="font-size: medium;">:</span></td>           <td width="248"><span style="font-size: medium;"><?= $row[3] ?></span></td>         </tr>
+                            <tr>           <td><span style="font-size: medium;">Tempat Tgl Lahir</span></td>           <td><span style="font-size: medium;">:</span></td>           <td><span style="font-size: medium;"><?= $row[12] ?>, <?= $row[11] ?></span></td>         </tr>
+						    <tr>           <td><span style="font-size: medium;">Alamat</span></td>           <td><span style="font-size: medium;">:</span></td>           <td><span style="font-size: medium;"><?= $row[5] ?></span></td>         </tr>
+                            <tr>           <td><span style="font-size: medium;">NIK</span></td>           <td><span style="font-size: medium;">:</span></td>           <td><span style="font-size: medium;"><?= $nomor ?> </span></td>         </tr>
+                            
+                            
+                                      
+                        </tbody></table>
+<br>
+        <div align="justify">
+            <span style="font-size: medium;">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orang tersebut diatas adalah Penduduk Desa Kemadang, Kecamatan Tanjungsari Kabupaten Gunungkidul
 			termasuk dalam kriteria miskin/tidak mampu sesuai dengan data TKP2K, dan form isian lampiran rekomendasi sesuai dengan
 			permensos kriteria kemiskinan.
-		<p>Demikian atas perkenanya di ucapkan terimakasih.
-		<br><br>
-	<div class="right">
-		<p>
-			Kemadang, <?= $tanggal ?>
-		</P>
-	</div>	<br>
-	<div class="">
-		<p> TKPK Desa Kemadang 
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; Kepala Desa Kemadang
-		<br><br><br><br>
-		<p>&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp; 
-							SURONO 
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;		<?= $namaPejabat ?></p>
-	</div>
-	
-	<p class="center">
-		TKPK Kecamatan Tanjungsari
-	</p>
-	<br><br><br>
-	<p class="center">
-	...........................
-	</p>
-	
-    
-    
-</div>
-</div>
-</div>
+		
+            </span> 
+        </div>
+        </div>
+<br>
+        <div align="justify">
+            <span style="font-size: medium;">
+
+			Demikian atas perkenanya di ucapkan terimakasih.
+        
+            </span> 
+        </div>
+        </div>
+<br>
+        <div align="right">
+        <span style="font-size: medium;">Kemadang, <?= $tanggal ?> </span><br>
+        <span style="font-size: medium;">LURAH </span></div><br>
+     
+        <div align="right">
+        <span style="font-size: medium;"><?= $namaPejabat ?></span></div>
+        
+        </tbody></table></body>
+        </html>
+

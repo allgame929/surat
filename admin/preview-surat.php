@@ -7,15 +7,22 @@
 	include 'cek.php';
 	include 'config.php';
 	include '../sections/header.php';
+    include 'fungsiromawi.php';
+
+    
 	?>
 </head>
 
 <body>
 
 <?php
+ 
     $nomor=$_POST['nomor'];
     $tanggal=$_POST['tanggal'];
     $perihal=$_POST['perihal'];
+    $bulan = date('n');
+    $tahun = date('Y');
+    $romawi    = getRomawi($bulan);
     //$namaPejabat=$_POST['namaPejabat'];
 
     
@@ -40,11 +47,11 @@
     $dataPersetujuannikah=mysql_fetch_assoc($resultPersetujuannikah);
     $nomor_surat_persetujuan_nikah=$dataPersetujuannikah['total']++;
 
-    $kop_surat_bpjs = $nomor_surat_bpjs . "/VII/2020";
-    $kop_surat_jamkesos = $nomor_surat_jamkesos . "/VII/2020";
-    $kop_surat_nikah = $nomor_surat_surat_nikah . "/VII/2020";
-    $kop_surat_pengantar_nikah = $nomor_surat_pengantar_nikah . "/VII/2020";
-    $kop_surat_persetujuan_nikah = $nomor_surat_persetujuan_nikah . "/VII/2020";
+    $kop_surat_bpjs = "440/".$nomor_surat_bpjs."/".$romawi."/".$tahun;
+    $kop_surat_jamkesos = "440/".$nomor_surat_jamkesos."/".$bulan."/".$tahun;
+    $kop_surat_nikah = "474.2/".$nomor_surat_surat_nikah."/".$bulan."/".$tahun;
+    $kop_surat_pengantar_nikah = "474.2/".$nomor_surat_pengantar_nikah."/".$bulan."/".$tahun;
+    $kop_surat_persetujuan_nikah = "474.2/".$nomor_surat_persetujuan_nikah."/".$bulan."/".$tahun;
 
 
 ?>
@@ -61,8 +68,8 @@
             background: #fff;
         }
         .surat {
-            margin: 10%;
-            border: 1px solid #cdcdcd;
+            margin: 3%;
+            background-color:white;
         }
     </style>
     <div class="print-header">
@@ -104,11 +111,14 @@
             
         });
 
+
+
         // $("#coba").on('click', function() {
         //     coba++;
         //     $("#no-surat").html(coba);            
         // })
-
+        
+   
         function saveSurat() {
             var nomor_surat_bpjs = '<?= $kop_surat_bpjs ?>';
             var nomor_surat_jamkesos = '<?= $kop_surat_jamkesos ?>';

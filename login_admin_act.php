@@ -8,6 +8,10 @@ $pass=$_POST['pass'];
 $query=mysql_query("select * from user where username='$uname' and password='$pass'")or die(mysql_error());
 if(mysql_num_rows($query)==1){
 	$_SESSION['uname']=$uname;
+	while($row = mysql_fetch_assoc($query)){
+		
+		$_SESSION['level']=$row['level'];
+	}
 	header("location:admin/index.php");
 }else{
 	header("location:index.php?pesan=gagal")or die(mysql_error());
